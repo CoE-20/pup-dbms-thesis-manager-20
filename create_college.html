@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Thesis Database</title>
+    
+    <link type="text/css" href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+    <link type="text/css" href="/stylesheet/index.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class = "container-fluid" id = "sub-header">
+        <div class = "container" >
+            <ul class = " pull-right">
+                <li><a href = "/login">LOG IN</a></li>
+                <li><a href="{{ url|safe }}" id = "logout-wrapper">{{ url_linktext }}</a><span>|</span></li>
+            </div>
+        </div>
+    </div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-comments" data-href="http://localhost:8080/" data-width="600" data-numposts="5"></div>
+
+<br>
+<br>
+    <div class = "container-fluid" id = "footer-wrapper">
+        <div class="row">
+            <div class = "container">
+                <div class="col-md-2" id = "footer-details">   
+                    <a href "https://github.com/CoE-20"><i class = "fa fa-github"></i><span >COE-20</span></a>
+                </div>
+                <div class="col-md-7 col-md-push-4" id = "footer-details">
+                    <a href = "https://github.com/JMEllarina"><i class = "fa fa-github"></i><span>Joanna Marie A. Ellarina</span></a>
+                    <span>      </span>
+                    <a = href = "https://github.com/Carowick122221"><i class = "fa fa-github"></i><span >Beatrice Nicole R. Quindoyos</span></a>
+                </div>
+            </div>
+        </div>
+    </div>   
+<script type="text/javascript" src="/static/javascript/script.js"></script>   
+</body>
+</html>

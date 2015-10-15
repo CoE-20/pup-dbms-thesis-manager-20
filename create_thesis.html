@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Thesis Database</title>
+    
+    <link type="text/css" href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link type="text/css" href="/stylesheet/index.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="row navbar-header">
+        <img class="img-responsive col-md-2" id = "navbar-logo" src = "/resources/img/logo.png"/>
+        <a class="navbar-title col-md-10" href="#"><b>University | Thesis Archives</b> </a>
+      </div>
+    </div>
+  </nav>  
+
+  <div class = "container-fluid" id = "sub-header">
+    <div class = "container" >
+      <ul class = " pull-right">
+          <li><a href = "{{ url|safe }}">{{ url_linktext }}</a></li>
+          <li><p >Welcome, {{user.nickname()}}<span id = "sub-header-divider">|</span></p></li>
+      </ul>
+    </div>
+  </div>
+   
+  <div class = "container" id = "form-title-wrapper">
+    <div class = "row">
+      
+      <div class = "col-md-3">
+        <h3 class = "form-title">New Thesis Entry</h3>
+      </div>
+      <div class="col-md-9"><hr id = "form-title-line"></div>
+      <!-- <div class ="col-md-6">
+        <ul class = " pull-right">
+          <li><p>La</p></li>
+          <li><p>La</p></li>
+        </ul>
+      </div> -->
+    </div>
+  </div>
+  
+  <div class = "container" id = "form-wrapper">
+    <div class = "row">
+      <form class = "form-horizontal" role="form" id = "create-form" method="post">
+        <div class = "col-md-4" id = "column-wrapper-1">
+          <div class = "input">
+            <label class="control-label" for="department">Department:</label> 
+            <select  class = "form-control" name="department" id = "input">
+              <option disabled selected style = "color:#999999;">Department</option>
+              <option value="CE">CE</option>
+              <option value="COE">COE</option>
+              <option value="ECE">ECE</option>
+              <option value="EE">EE</option>
+              <option value="IE">IE</option>
+              <option value="ME">ME</option>
+             </select>
+          </div>
+
+       
+          <div class = "input">
+            <label class="control-label" for="year">Year:</label> 
+            <select  class = "form-control" name="year" id = "input" required>
+              <option disabled selected style = "color:#999999;">Year</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+             </select>
+          </div>
+
+          <div class = "input"> 
+            <label class="control-label" for="title">Title:</label>
+            <input type="text" class="form-control" name = "title" placeholder="Title" required>
+          </div>   
+
+          <div class = "input"> 
+            <label class="control-label" for="subtitle">Subtitle:</label>
+            <input type="text" class="form-control" name = "subtitle" placeholder="Subtitle">
+          </div>  
+
+          <div class = "input">
+              <label class="control-label" for="adviser">Adviser:</label> 
+              <input type="text" class="form-control" name = "adviser" placeholder="Adviser" required>
+          </div>
+
+        </div>
+    
+
+        <div class = "col-md-4" id = "column-wrapper-2">
+
+          <div class = "input">
+            <label class="control-label" for="abstract" >Abstract:</label> 
+            <textarea class="form-control" type = "text" rows="4"  name = "abstract" style = "height: 300px; resize:none;" placeholder="Abstract" value = "Abstract" required></textarea>
+          </div>
+
+          <div class = "input">
+            <label class="control-label" for="section">Section:</label> 
+            <select class = "form-control" name="section" id = "input" required>
+                <option disabled selected style = "color:#c0c0c0 !important;">Section</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+          </div>
+
+        </div>  
+          
+
+        <div class="col-md-4" id = "column-wrapper-3">
+
+          <div class = "input">
+            <label class="control-label" for="proponent1">Proponent 1:</label> 
+            <input type="text" class="form-control" name = "proponent1" placeholder="Proponent's Name" required>
+          </div>
+
+          <div class = "input">
+            <label class="control-label" for="proponent2">Proponent 2:</label> 
+            <input type="text" class="form-control" name = "proponent2" placeholder="Proponent's Name" required>
+          </div>
+          
+          <div class = "input">
+            <label class="control-label" for="proponent3">Proponent 3:</label> 
+            <input type="text" class="form-control" name = "proponent3" placeholder="Proponent's Name" required>
+          </div>
+
+          <div class = "input">
+            <label class="control-label" for="proponent4">Proponent 4:</label> 
+            <input type="text" class="form-control" name = "proponent4" placeholder="Proponent's Name" required>
+          </div>
+
+          <div class = "input">
+            <label class="control-label" for="proponent5">Proponent 5:</label> 
+            <input type="text" class="form-control" name = "proponent5" placeholder="Proponent's Name">
+          </div>    
+        </div>
+      
+    </div>          
+  </div>
+
+
+ <!-- <div class = "submit" id = "create-button-wrapper"> 
+              <button class = "btn" type="submit" value="Submit" id= "">Submit</button>
+          </div> -->
+  <div class="container" id = "create-button-group-wrapper">
+      <div class="col-md-4"><hr id = "form-title-line"></div>
+      <div class="col-md-4 btn-group">
+          <div id = "create-button-wrapper">       
+            <a class="btn" >
+              <acronym title = "Clear Fields"><i class="fa fa-times fa-3x"></i></acronym>
+            </a>
+
+            <a class="btn" href="/thesis/list/all" >
+              <acronym title = "View List"><i class="fa fa-eye fa-3x"></i></acronym>
+            </a>
+
+            <button type="submit" value="Submit" class = "btn" id = "create-logo-wrapper">
+            <acronym title = "Create"><i class="fa fa-check fa-3x"></acronym></i>
+            </button>
+          </div>
+      </div>
+      <div class="col-md-4"><hr id = "form-title-line"></div>
+  </div>
+
+ </form>
+ <div class = "container-fluid" id = "footer-wrapper">
+        <div class="row">
+            <div class = "container">
+                <div class="col-md-2" id = "footer-details1">   
+                    <a href = "https://github.com/CoE-20"><i class = "fa fa-github"></i><span>COE-20</span></a>
+                </div>
+                <!-- <div class="pull-right" id = "footer-details2">
+                    <a href = "https://github.com/JMEllarina"><i class = "fa fa-github"></i><span>Joanna Marie A. Ellarina</span></a>
+                    <span>      </span>
+                    <a = href = "https://github.com/Carowick122221"><i class = "fa fa-github"></i><span>Beatrice Nicole R. Quindoyos</span></a>
+                </div> -->
+            </div>
+        </div>
+    </div>   
+
+<script type="text/javascript" src="/javascript/script.js"></script>   
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Thesis Database</title>
+    
+    <link type="text/css" href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+
+    <link type="text/css" href="/stylesheet/stylesheet.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class = "container-fluid" id= "navigation-wrapper">
+        <div class = "row">
+            <nav class="navbar navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header navbar-left">
+                    <i class="fa fa-university fa-2x"><a href "/">Thesis Database</a></i>
+                </div>
+                <div class="nav navbar-nav navbar-right" id = "button-logout-wrapper">
+                    <p class="welcome">Welcome {{user.nickname()}} <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a></p>
+                </div>
+          </div>
+        </nav>
+        </div>
+    </div>
+
+<div class = "container" id = "form-wrapper">
+  <div class = "row">
+    <div class = "col-md-4 col-md-offset-4">
+      <form class = "form-horizontal" role="form" id = "create-form" method="post">
+        <h3>Thesis</h3>
+        <div class = "input">
+          <label class="control-label" for="department">Department:</label> 
+          <select  class = "form-control" name="department" id = "input">
+            <option disabled selected style = "color:#999999;">Department</option>
+            <option value="CE">CE</option>
+            <option value="COE">COE</option>
+            <option value="ECE">ECE</option>
+            <option value="EE">EE</option>
+            <option value="IE">IE</option>
+            <option value="ME">ME</option>
+           </select>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="year">Year:</label> 
+          <select  class = "form-control" name="year" id = "input" required>
+            <option disabled selected style = "color:#999999;">Year</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+           </select>
+        </div>
+        <div class = "input"> 
+          <label class="control-label" for="title">Title:</label>
+          <input type="text" class="form-control" name = "title" placeholder="Title" required>
+        </div>   
+        <div class = "input"> 
+          <label class="control-label" for="subtitle">Subtitle:</label>
+          <input type="text" class="form-control" name = "subtitle" placeholder="Subtitle">
+        </div>      
+        <div class = "input">
+          <label class="control-label" for="abstract" >Abstract:</label> 
+          <textarea class="form-control" type = "text" rows="4" name = "abstract" placeholder="Abstract" value = "Abstract" required></textarea>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="adviser">Adviser:</label> 
+          <input type="text" class="form-control" name = "adviser" placeholder="Adviser" required>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="section">Section:</label> 
+          <select class = "form-control" name="section" id = "input" required>
+              <option disabled selected style = "color:#c0c0c0 !important;">Section</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="proponent1">Proponent 1:</label> 
+          <input type="text" class="form-control" name = "proponent1" placeholder="Proponent's Name" required>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="proponent2">Proponent 2:</label> 
+          <input type="text" class="form-control" name = "proponent2" placeholder="Proponent's Name" required>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="proponent3">Proponent 3:</label> 
+          <input type="text" class="form-control" name = "proponent3" placeholder="Proponent's Name" required>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="proponent4">Proponent 4:</label> 
+          <input type="text" class="form-control" name = "proponent4" placeholder="Proponent's Name" required>
+        </div>
+        <div class = "input">
+          <label class="control-label" for="proponent5">Proponent 5:</label> 
+          <input type="text" class="form-control" name = "proponent5" placeholder="Proponent's Name">
+        </div>
+        <div class = "submit"> 
+            <button class = "btn btn-default" type="submit" value="Submit">Submit</button>
+        </div>            
+      </form><br><br>
+    </div>          
+  </div>
+</div><br><br>
+
+<div class = "container-fluid" id = "footer-wrapper">
+    <div class="row">
+        <div class = "container">
+            <div class="col-md-2" id = "footer-details">   
+                <a href "https://github.com/CoE-20"><i class = "fa fa-github"></i><span >COE-20</span></a>
+            </div>
+            <div class="col-md-7 col-md-push-4" id = "footer-details">
+                <a href = "https://github.com/JMEllarina"><i class = "fa fa-github"></i><span>Joanna Marie A. Ellarina</span></a>
+                <span>      </span>
+                <a = href = "https://github.com/Carowick122221"><i class = "fa fa-github"></i><span >Beatrice Nicole R. Quindoyos</span></a>
+            </div>
+        </div>
+    </div>
+</div>   
+<script type="text/javascript" src="/javascript/script.js"></script>   
+</body>
+</html>

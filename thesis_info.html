@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Thesis Database</title>
+    
+    <link type="text/css" href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link type="text/css" href="/stylesheet/index.css" rel="stylesheet">
+
+</head>
+<body>
+    
+<nav class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="row navbar-header">
+        <img class="img-responsive col-md-2" id = "navbar-logo" src = "/resources/img/logo.png"/>
+        <a class="navbar-title col-md-10" href="#"><b>University | Thesis Archives</b> </a>
+      </div>
+    </div>
+  </nav>  
+
+  <div class = "container-fluid" id = "sub-header">
+    <ul class = " pull-left">
+      <li><a href = "/thesis/list/all">Thesis List</a></li>
+      <li><a href = "/">Home</a></li>
+    </ul>
+    <div class = "container" >
+      <ul class = " pull-right">
+        <li><a href = "{{ url|safe }}">{{ url_linktext }}</a></li>
+        <li><p >Welcome, {{user.nickname()}}<span id = "sub-header-divider">|</span></p></li>
+      </ul>
+    </div>
+  </div>
+
+<div class = "container" id = "form-wrapper">
+  <div class = "row">
+    <div class = "col-md-10 col-md-offset-1">
+      <table class="table table-hover table-striped">
+        <h3>{{thesis.title}}</h3> <br><br>
+        <p>{{thesis.abstract}}</p><br> 
+        <h5>PROPONENTS: {{thesis.proponent1}}, {{thesis.proponent2}}, {{thesis.proponent3}}, {{thesis.proponent4}}, {{thesis.proponent5}}</h5>
+        <h5>Section: {{thesis.section}}</h5>
+        <h5>ADVISER: {{thesis.adviser}}</h5>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-comments" data-href="http://localhost:8080/thesis/info" data-width="600" data-numposts="5"></div>
+
+<div class = "container-fluid" id = "footer-wrapper">
+    <div class="row">
+        <div class = "container">
+            <div class="col-md-2" id = "footer-details">   
+                <a href "https://github.com/CoE-20"><i class = "fa fa-github"></i><span >COE-20</span></a>
+            </div>
+            <div class="col-md-7 col-md-push-4" id = "footer-details">
+                <a href = "https://github.com/JMEllarina"><i class = "fa fa-github"></i><span>Joanna Marie A. Ellarina</span></a>
+                <span>      </span>
+                <a = href = "https://github.com/Carowick122221"><i class = "fa fa-github"></i><span >Beatrice Nicole R. Quindoyos</span></a>
+            </div>
+        </div>
+    </div>
+</div>   
+<script type="text/javascript" src="/static/javascript/script.js"></script>   
+</body>
+</html>
